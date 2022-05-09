@@ -1,0 +1,368 @@
+openapi: 3.0.0
+x-bc-root:
+  version: 0.1.0
+  provider:
+    id: f3adb8dd-985b-11e5-a66e-cc3d82565e41
+    name: BetterCloud-Public
+    domain: bettercloud.com
+  postman:
+    schema:
+      url: 'https://api.getpostman.com/apis/0bf880e7-ed15-4d30-9420-b6f9abfd8680/versions/6fbf0fda-5b31-474f-8094-b32252566410/schemas/d20fbb7d-b371-4b9e-bc54-37a20a3dbba8'
+info:
+  title: BetterCloud API Full
+  description: api documentation for internal/external apis at bettercloud2
+  contact: {}
+  version: '1.0'
+servers:
+  - url: 'https://api.bettercloud.com/api'
+  - url: 'https://x-holding.devbettercloud.com/api'
+    variables: {}
+paths:
+  /graphql:
+    post:
+      tags:
+        - Reporting - GraphQL
+      summary: GraphQL Search - Request Body Search
+      description: |-
+        Explore your data leveraging the rich relationships defined in GraphQL.
+
+        Try out the playground at https://developer.bettercloud.com/#/reporting/explorer
+
+        https://api.bettercloud.com
+      operationId: Post_Graphql_search
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GraphQLSearch-RequestBodySearchRequest'
+            example:
+              query: '{ groups(filter: { memberCount: { eq: 0 } }) { id displayValue memberCount } } '
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers:
+            Access-Control-Allow-Headers:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: 'Origin, Content-Type, Authorization'
+            Access-Control-Allow-Methods:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: 'POST, GET, PUT, OPTIONS, DELETE, PATCH'
+            Access-Control-Allow-Origin:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: '*'
+            Access-Control-Expose-Headers:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Location
+            Access-Control-Max-Age:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: '3600'
+            Alt-Svc:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: clear
+            Cache-Control:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: 'max-age=0, must-revalidate'
+            Connection:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: keep-alive
+            Content-Length:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: '379'
+            Content-Security-Policy:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: 'default-src ''none''; script-src ''self'' ''sha256-xWNWy6g4QpHCwZRdmLfI81eyBjRIztPmws2tVdvXBmg='' https://g.alicdn.com https://fullstory.com https://storage.googleapis.com https://*.atlassian.net https://*.elev.io https://cdnjs.cloudflare.com https://ajax.googleapis.com https://*.zopim.com https://*.fullstory.com https://accounts.google.com https://cdn.evergage.com https://bettercloud.evergage.com https://apis.google.com https://www.gstatic.com https://cdn.pendo.io https://app.pendo.io https://cdn.pendo.io https://pendo-io-static.storage.googleapis.com https://pendo-static-4896387203858432.storage.googleapis.com; style-src ''self'' ''unsafe-inline'' https://cdn.pendo.io https://cdn.elev.io https://*.zdassets.com https://cdnjs.cloudflare.com https://fonts.googleapis.com https://www.gstatic.com https://pendo-static-4896387203858432.storage.googleapis.com; font-src ''self'' data: https://fonts.gstatic.com https://css.zohostatic.com https://*.zopim.com https://themes.googleusercontent.com; report-uri /ducs/v1/public/cspReport; connect-src ''self'' https://notify.bugsnag.com https://sessions.bugsnag.com https://*.bettercloud.com https://script.google.com https://script.googleusercontent.com https://*.elev.io https://g.alicdn.com https://fullstory.com wss://*.zopim.com https://*.zopim.com https://ipv4.google.com https://*.fullstory.com wss://*.elev.io https://app.pendo.io; frame-src ''self'' https://bettercloud.youcanbook.me https://betterit.cloud https://cdn.elev.io https://accounts.google.com https://app.elev.io; base-uri ''self'' https://cdn.elev.io; form-action ''self''; img-src data: blob: * https://cdn.pendo.io https://app.pendo.io https://cdn.pendo.io https://pendo-static-4896387203858432.storage.googleapis.com; media-src https://*.zopim.com;'
+            Date:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: 'Fri, 14 Sep 2018 17:36:50 GMT'
+            Server:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Reblaze Secure Web Gateway
+            Strict-Transport-Security:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: max-age=15768000; includeSubdomains; preload
+            X-Content-Type-Options:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: nosniff
+            X-Frame-Options:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: SAMEORIGIN
+            X-XSS-Protection:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: 1; mode=block
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/GraphQLResponse'
+              example:
+                data:
+                  groups:
+                    - id: fb1b7499-7899-11e8-af14-2d99bbdfb1ad
+                      displayValue: Security - old
+                      memberCount: 0
+                    - id: 200c5e86-20ae-11e8-ae1d-ff13cdb7b94b
+                      displayValue: Engineering - old
+                      memberCount: 0
+      deprecated: false
+    get:
+      tags:
+        - Reporting - GraphQL
+      summary: GraphQL Search - Query Parameter Search
+      description: |-
+        Explore your data leveraging the rich relationships defined in GraphQL.
+
+        Try out the playground at https://developer.bettercloud.com/#/reporting/explorer
+
+        https://api.bettercloud.com
+      operationId: Get_Graphql_search
+      parameters:
+        - name: query
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: '{ groups(filter: { memberCount: { eq: 0 } }) { id displayValue memberCount } }'
+      responses:
+        '200':
+          description: ''
+          headers:
+            Access-Control-Allow-Headers:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: 'Origin, Content-Type, Authorization'
+            Access-Control-Allow-Methods:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: 'POST, GET, PUT, OPTIONS, DELETE, PATCH'
+            Access-Control-Allow-Origin:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: '*'
+            Access-Control-Expose-Headers:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Location
+            Access-Control-Max-Age:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: '3600'
+            Alt-Svc:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: clear
+            Cache-Control:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: 'max-age=0, must-revalidate'
+            Connection:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: keep-alive
+            Content-Length:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: '379'
+            Content-Security-Policy:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: 'default-src ''none''; script-src ''self'' ''sha256-xWNWy6g4QpHCwZRdmLfI81eyBjRIztPmws2tVdvXBmg='' https://g.alicdn.com https://fullstory.com https://storage.googleapis.com https://*.atlassian.net https://*.elev.io https://cdnjs.cloudflare.com https://ajax.googleapis.com https://*.zopim.com https://*.fullstory.com https://accounts.google.com https://cdn.evergage.com https://bettercloud.evergage.com https://apis.google.com https://www.gstatic.com https://cdn.pendo.io https://app.pendo.io https://cdn.pendo.io https://pendo-io-static.storage.googleapis.com https://pendo-static-4896387203858432.storage.googleapis.com; style-src ''self'' ''unsafe-inline'' https://cdn.pendo.io https://cdn.elev.io https://*.zdassets.com https://cdnjs.cloudflare.com https://fonts.googleapis.com https://www.gstatic.com https://pendo-static-4896387203858432.storage.googleapis.com; font-src ''self'' data: https://fonts.gstatic.com https://css.zohostatic.com https://*.zopim.com https://themes.googleusercontent.com; report-uri /ducs/v1/public/cspReport; connect-src ''self'' https://notify.bugsnag.com https://sessions.bugsnag.com https://*.bettercloud.com https://script.google.com https://script.googleusercontent.com https://*.elev.io https://g.alicdn.com https://fullstory.com wss://*.zopim.com https://*.zopim.com https://ipv4.google.com https://*.fullstory.com wss://*.elev.io https://app.pendo.io; frame-src ''self'' https://bettercloud.youcanbook.me https://betterit.cloud https://cdn.elev.io https://accounts.google.com https://app.elev.io; base-uri ''self'' https://cdn.elev.io; form-action ''self''; img-src data: blob: * https://cdn.pendo.io https://app.pendo.io https://cdn.pendo.io https://pendo-static-4896387203858432.storage.googleapis.com; media-src https://*.zopim.com;'
+            Date:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: 'Fri, 14 Sep 2018 17:57:25 GMT'
+            Server:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Reblaze Secure Web Gateway
+            Strict-Transport-Security:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: max-age=15768000; includeSubdomains; preload
+            Via:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: 1.1 google
+            X-Application-Context:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: 'core-open-api-forward-micro:prod:8080'
+            X-Content-Type-Options:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: nosniff
+            X-Frame-Options:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: SAMEORIGIN
+            X-Rate-Limit-ID:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: default-global
+            X-Rate-Limit-Remaining:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: '491'
+            X-Rate-Limit-Reset:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: '09/14/2018 17:57:24'
+            X-Rate-Limit-Value:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: '500'
+            X-XSS-Protection:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: 1; mode=block
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/GraphQLResponse'
+              example:
+                data:
+                  groups:
+                    - id: fb1b7499-7899-11e8-af14-2d99bbdfb1ad
+                      displayValue: Security - old
+                      memberCount: 0
+                    - id: 200c5e86-20ae-11e8-ae1d-ff13cdb7b94b
+                      displayValue: Engineering - old
+                      memberCount: 0
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/RateLimit'
+      deprecated: false
+    x-bc-path-item:
+      id: a3f8349f-77bb-397b-95dc-09a035427352
+      version: 0.1.0
+      provider:
+        id: f3adb8dd-985b-11e5-a66e-cc3d82565e41
+        name: BetterCloud
+        domain: bettercloud.com
+      open-api-id: f3adb8dd-985b-11e5-a66e-cc3d82565e41
+components:
+  responses:
+    RateLimit:
+      description: The API rate limit has been exceeded for this time frame.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error429'
+    Unauthorized:
+      description: No API key found in request or Invalid authentication credentials.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error401'
+  schemas:    
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      name: Authorization
+      in: header
+      x-bc-security-scheme:
+        id: null
+        version: 0.1.0
+        name: apiKey
+        provider:
+          id: f3adb8dd-985b-11e5-a66e-cc3d82565e41
+          name: BetterCloud
+          domain: bettercloud.com
+security:
+  - apiKeyAuth: []
