@@ -1,4 +1,4 @@
-openapi: 3.0.0
+openapi: 3.1.0
 x-bc-root:
   version: 0.1.0
   provider:
@@ -12,7 +12,7 @@ info:
   title: BetterCloud API Full
   description: api documentation for internal/external apis at bettercloud2
   contact: {}
-  version: '2.0'
+  version: '1.0'
 servers:
   - url: 'https://api.bettercloud.com/api'
   - url: 'https://x-holding.devbettercloud.com/api'
@@ -347,6 +347,22 @@ components:
           schema:
             $ref: '#/components/schemas/Error401'
   schemas:
+    Error401:
+      type: object
+      properties:
+        message:
+          type: string
+          example: No API key found in request
+      required:
+        - message
+    Error429:
+      type: object
+      properties:
+        message:
+          type: string
+          example: API rate limit exceeded
+      required:
+        - message
     GraphQLResponse:
       title: GraphQLResponse
       type: object
@@ -362,7 +378,6 @@ components:
       title: GraphQLSearch-RequestBodySearchRequest
       required:
         - query
-        - test
       type: object
       properties:
         query:
@@ -379,8 +394,6 @@ components:
             presentation:
               name:
                 default: Query
-        test:
-          type: boolean
       example:
         query: '{ groups(filter: { memberCount: { eq: 0 } }) { id displayValue memberCount } } '
       x-bc-schema:
