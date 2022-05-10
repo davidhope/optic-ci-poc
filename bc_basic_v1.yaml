@@ -12,7 +12,7 @@ info:
   title: BetterCloud API Full
   description: api documentation for internal/external apis at bettercloud2
   contact: {}
-  version: '1.0'
+  version: '2.0'
 servers:
   - url: 'https://api.bettercloud.com/api'
   - url: 'https://x-holding.devbettercloud.com/api'
@@ -25,9 +25,7 @@ paths:
       summary: GraphQL Search - Request Body Search
       description: |-
         Explore your data leveraging the rich relationships defined in GraphQL.
-
         Try out the playground at https://developer.bettercloud.com/#/reporting/explorer
-
         https://api.bettercloud.com
       operationId: Post_Graphql_search
       requestBody:
@@ -159,9 +157,7 @@ paths:
       summary: GraphQL Search - Query Parameter Search
       description: |-
         Explore your data leveraging the rich relationships defined in GraphQL.
-
         Try out the playground at https://developer.bettercloud.com/#/reporting/explorer
-
         https://api.bettercloud.com
       operationId: Get_Graphql_search
       parameters:
@@ -350,7 +346,23 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/Error401'
-  schemas:  
+  schemas:
+    Error401:
+      type: object
+      properties:
+        message:
+          type: string
+          example: No API key found in request
+      required:
+        - message
+    Error429:
+      type: object
+      properties:
+        message:
+          type: string
+          example: API rate limit exceeded
+      required:
+        - message
     GraphQLResponse:
       title: GraphQLResponse
       type: object
@@ -366,6 +378,7 @@ components:
       title: GraphQLSearch-RequestBodySearchRequest
       required:
         - query
+        - test
       type: object
       properties:
         query:
@@ -382,6 +395,8 @@ components:
             presentation:
               name:
                 default: Query
+        test:
+          type: boolean
       example:
         query: '{ groups(filter: { memberCount: { eq: 0 } }) { id displayValue memberCount } } '
       x-bc-schema:

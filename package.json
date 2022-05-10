@@ -1,0 +1,28 @@
+{
+  "name": "optic-ci-poc",
+  "version": "1.0.0",
+  "description": "POC for the optic-ci tool to detect OAS breaking changes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compare-basic": "optic-ci compare --from bc_basic_v1.yaml --to bc_basic_v1_3_1_0.yaml",
+    "compare-v1v2": "optic-ci compare --from bc_basic_v1.yaml --to bc_basic_v2.yaml",
+    "compare": "optic-ci compare --from main:bc_basic_v1.yaml --to required-param:bc_basic_v1.yaml"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/breiman/optic-ci-poc.git"
+  },
+  "keywords": [
+    "optic"
+  ],
+  "author": "brock.reiman@bettercloud.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/breiman/optic-ci-poc/issues"
+  },
+  "devDependencies": {
+    "@useoptic/optic-ci": "^0.24.21",
+    "@useoptic/rulesets-base": "^0.24.21"
+  }
+}
