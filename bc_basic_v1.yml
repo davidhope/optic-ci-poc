@@ -350,7 +350,54 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/Error401'
-  schemas:    
+  schemas:  
+    GraphQLResponse:
+      title: GraphQLResponse
+      type: object
+      properties:
+        data:
+          type: object
+        errors:
+          type: array
+          maxItems: 100
+          items:
+            type: object
+    GraphQLSearch-RequestBodySearchRequest:
+      title: GraphQLSearch-RequestBodySearchRequest
+      required:
+        - query
+      type: object
+      properties:
+        query:
+          type: string
+          x-bc-property:
+            id: c35bc39f-5f85-3410-b5cf-347879998082
+            supports:
+              dynamic-fields: true
+              conditions:
+                enabled: true
+                presentation:
+                  component:
+                    type: textBox
+            presentation:
+              name:
+                default: Query
+      example:
+        query: '{ groups(filter: { memberCount: { eq: 0 } }) { id displayValue memberCount } } '
+      x-bc-schema:
+        id: 979a58cb-32d6-39b6-bea9-214c3ebb8a8d
+        version: 0.1.0
+        provider:
+          id: f3adb8dd-985b-11e5-a66e-cc3d82565e41
+          name: BetterCloud
+          domain: bettercloud.com
+        schema-name: GraphQLSearch-RequestBodySearchRequest
+        open-api-id: f3adb8dd-985b-11e5-a66e-cc3d82565e41
+        presentation:
+          name:
+            default: GraphQLSearch-RequestBodySearchRequest
+          name-with-possession:
+            default: GraphQLSearch-RequestBodySearchRequests
   securitySchemes:
     apiKeyAuth:
       type: apiKey
