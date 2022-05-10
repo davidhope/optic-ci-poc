@@ -379,6 +379,7 @@ components:
       required:
         - query
         - test
+        - foo
       type: object
       properties:
         query:
@@ -397,6 +398,8 @@ components:
                 default: Query
         test:
           type: boolean
+        foo:
+          type: string
       example:
         query: '{ groups(filter: { memberCount: { eq: 0 } }) { id displayValue memberCount } } '
       x-bc-schema:
