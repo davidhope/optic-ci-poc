@@ -378,7 +378,6 @@ components:
       title: GraphQLSearch-RequestBodySearchRequest
       required:
         - query
-        - test
       type: object
       properties:
         query:
@@ -395,8 +394,6 @@ components:
             presentation:
               name:
                 default: Query
-        test:
-          type: boolean
       example:
         query: '{ groups(filter: { memberCount: { eq: 0 } }) { id displayValue memberCount } } '
       x-bc-schema:
