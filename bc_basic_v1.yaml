@@ -12,7 +12,7 @@ info:
   title: BetterCloud API Full
   description: api documentation for internal/external apis at bettercloud2
   contact: {}
-  version: '2.0'
+  version: '1.0'
 servers:
   - url: 'https://api.bettercloud.com/api'
   - url: 'https://x-holding.devbettercloud.com/api'
