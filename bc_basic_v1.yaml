@@ -378,8 +378,6 @@ components:
       title: GraphQLSearch-RequestBodySearchRequest
       required:
         - query
-        - test
-        - foo
       type: object
       properties:
         query:

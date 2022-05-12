@@ -22,7 +22,11 @@
     "url": "https://github.com/breiman/optic-ci-poc/issues"
   },
   "devDependencies": {
-    "@useoptic/optic-ci": "^0.24.21",
-    "@useoptic/rulesets-base": "^0.24.21"
+    "@useoptic/optic-ci": "^0.24.20",
+    "@useoptic/rulesets-base": "^0.24.20",
+    "@useoptic/standard-rulesets": "0.24.20"
+  },
+  "dependencies": {
+    "requirejs": "^2.3.6"
   }
 }
