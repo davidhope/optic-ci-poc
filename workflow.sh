@@ -1,4 +1,4 @@
-  npm run compare
+  npm run compare-remove-op
   if [ $? -eq 0 ]; then
       echo OK
   else
