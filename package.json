@@ -7,7 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "compare-basic": "optic-ci compare --from bc_basic_v1.yaml --to bc_basic_v1_3_1_0.yaml",
     "compare-v1v2": "optic-ci compare --from bc_basic_v1.yaml --to bc_basic_v2.yaml",
-    "compare": "optic-ci compare --from main:bc_basic_v1.yaml --to required-param:bc_basic_v1.yaml"
+    "compare-required-param": "optic-ci compare --from main:bc_basic_v1.yaml --to required-param:bc_basic_v1.yaml",
+    "compare-required-queryparam": "optic-ci compare --from main:bc_basic_v1.yaml --to required-queryparam:bc_basic_v1.yaml",
+    "compare-remove-op": "optic-ci compare --from main:bc_basic_v1.yaml --to remove-op:bc_basic_v1.yaml",
+    "compare-remove-response-prop": "optic-ci compare --from main:bc_basic_v1.yaml --to remove-response-prop:bc_basic_v1.yaml"
   },
   "repository": {
     "type": "git",
@@ -23,6 +26,10 @@
   },
   "devDependencies": {
     "@useoptic/optic-ci": "^0.24.21",
-    "@useoptic/rulesets-base": "^0.24.21"
+    "@useoptic/rulesets-base": "^0.24.21",
+    "@useoptic/standard-rulesets": "0.24.20"
+  },
+  "dependencies": {
+    "requirejs": "^2.3.6"
   }
 }
