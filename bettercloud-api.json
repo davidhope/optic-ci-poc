@@ -1,0 +1,3311 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "BetterCloud API",
+    "description": "TODO: Add Description",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.bettercloud.com/api",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/v1/tokens/lookup": {
+      "get": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Validate API Token",
+        "description": "Use this endpoint to check that a token is valid.\n\nhttps://api.bettercloud.com",
+        "operationId": "ValidateApiToken",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {
+              "Access-Control-Allow-Headers": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Origin, Content-Type, Authorization"
+                  }
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "POST, GET, PUT, OPTIONS, DELETE, PATCH"
+                  }
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "*"
+                  }
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Location"
+                  }
+                }
+              },
+              "Access-Control-Max-Age": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "3600"
+                  }
+                }
+              },
+              "Alt-Svc": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "clear"
+                  }
+                }
+              },
+              "Cache-Control": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "max-age=0, must-revalidate"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Content-Encoding": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "gzip"
+                  }
+                }
+              },
+              "Content-Security-Policy": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "default-src 'none'; script-src 'self' 'sha256-xWNWy6g4QpHCwZRdmLfI81eyBjRIztPmws2tVdvXBmg=' https://g.alicdn.com https://fullstory.com https://storage.googleapis.com https://*.atlassian.net https://*.elev.io https://cdnjs.cloudflare.com https://ajax.googleapis.com https://*.zopim.com https://*.fullstory.com https://accounts.google.com https://cdn.evergage.com https://bettercloud.evergage.com https://apis.google.com https://www.gstatic.com https://cdn.pendo.io https://app.pendo.io https://cdn.pendo.io https://pendo-io-static.storage.googleapis.com https://pendo-static-4896387203858432.storage.googleapis.com; style-src 'self' 'unsafe-inline' https://cdn.pendo.io https://cdn.elev.io https://*.zdassets.com https://cdnjs.cloudflare.com https://fonts.googleapis.com https://www.gstatic.com https://pendo-static-4896387203858432.storage.googleapis.com; font-src 'self' data: https://fonts.gstatic.com https://css.zohostatic.com https://*.zopim.com https://themes.googleusercontent.com; report-uri /ducs/v1/public/cspReport; connect-src 'self' https://notify.bugsnag.com https://sessions.bugsnag.com https://*.bettercloud.com https://script.google.com https://script.googleusercontent.com https://*.elev.io https://g.alicdn.com https://fullstory.com wss://*.zopim.com https://*.zopim.com https://ipv4.google.com https://*.fullstory.com wss://*.elev.io https://app.pendo.io; frame-src 'self' https://bettercloud.youcanbook.me https://betterit.cloud https://cdn.elev.io https://accounts.google.com https://app.elev.io; base-uri 'self' https://cdn.elev.io; form-action 'self'; img-src data: blob: * https://cdn.pendo.io https://app.pendo.io https://cdn.pendo.io https://pendo-static-4896387203858432.storage.googleapis.com; media-src https://*.zopim.com;"
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Fri, 14 Sep 2018 17:39:25 GMT"
+                  }
+                }
+              },
+              "Server": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Reblaze Secure Web Gateway"
+                  }
+                }
+              },
+              "Strict-Transport-Security": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "max-age=15768000; includeSubdomains; preload"
+                  }
+                }
+              },
+              "Transfer-Encoding": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "chunked"
+                  }
+                }
+              },
+              "Vary": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Accept-Encoding"
+                  }
+                }
+              },
+              "Via": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "1.1 google"
+                  }
+                }
+              },
+              "X-Content-Type-Options": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "nosniff"
+                  }
+                }
+              },
+              "X-Frame-Options": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "SAMEORIGIN"
+                  }
+                }
+              },
+              "X-XSS-Protection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "1; mode=block"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json;charset=UTF-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidAPIToken"
+                },
+                "example": {
+                  "id": "657701227ab861f866b27715f794689df3fede7c97494580cbbd54e3c9cdc898",
+                  "tenantId": "b5cae899-e406-11e7-b4d6-6f545c7ffda3",
+                  "name": "David's token",
+                  "description": "Using this token to generate and test API documentation.",
+                  "createdBy": "d47dd83f-b066-11e8-b6ab-4b1de1fa506e",
+                  "createdAt": 1536844097,
+                  "lastUsedAt": 1536946621
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowDoesNotExist"
+                },
+                "example": {
+                  "code": "45301",
+                  "message": "Invalid API Key",
+                  "description": "The provided key is invalid.",
+                  "link": "",
+                  "errorCorrelationId": "492c9ba1-15bf-4288-9c2c-753b09e0dc9d"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v1/docs/errors": {
+      "get": {
+        "tags": [
+          "Documentation"
+        ],
+        "summary": "Error Documentation",
+        "description": "List all of the error documentation. Each error is identified by the `id` field.\n\nhttps://api.bettercloud.com",
+        "operationId": "ErrorDocumentation",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v1/docs/errors/{errorCode}": {
+      "get": {
+        "tags": [
+          "Documentation"
+        ],
+        "summary": "Error Code Documentation",
+        "description": "List all of the error documentation. Each error is identified by the `id` field.\n\nhttps://api.bettercloud.com",
+        "operationId": "ErrorCodeDocumentation",
+        "parameters": [
+          {
+            "name": "errorCode",
+            "in": "path",
+            "description": "The error code returned in the error response payload.",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/graphql": {
+      "post": {
+        "tags": [
+          "Reporting - GraphQL"
+        ],
+        "summary": "GraphQL Search - Request Body Search",
+        "description": "Explore your data leveraging the rich relationships defined in GraphQL.\n\nTry out the playground at https://developer.bettercloud.com/#/reporting/explorer\n\nhttps://api.bettercloud.com",
+        "operationId": "Graphql search  request body search",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GraphQLSearch-RequestBodySearchRequest"
+              },
+              "example": "{\"query\":\"{ groups(filter: { memberCount: { eq: 0 } }) { id displayValue memberCount } } \"}"
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {
+              "Access-Control-Allow-Headers": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Origin, Content-Type, Authorization"
+                  }
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "POST, GET, PUT, OPTIONS, DELETE, PATCH"
+                  }
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "*"
+                  }
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Location"
+                  }
+                }
+              },
+              "Access-Control-Max-Age": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "3600"
+                  }
+                }
+              },
+              "Alt-Svc": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "clear"
+                  }
+                }
+              },
+              "Cache-Control": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "max-age=0, must-revalidate"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "379"
+                  }
+                }
+              },
+              "Content-Security-Policy": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "default-src 'none'; script-src 'self' 'sha256-xWNWy6g4QpHCwZRdmLfI81eyBjRIztPmws2tVdvXBmg=' https://g.alicdn.com https://fullstory.com https://storage.googleapis.com https://*.atlassian.net https://*.elev.io https://cdnjs.cloudflare.com https://ajax.googleapis.com https://*.zopim.com https://*.fullstory.com https://accounts.google.com https://cdn.evergage.com https://bettercloud.evergage.com https://apis.google.com https://www.gstatic.com https://cdn.pendo.io https://app.pendo.io https://cdn.pendo.io https://pendo-io-static.storage.googleapis.com https://pendo-static-4896387203858432.storage.googleapis.com; style-src 'self' 'unsafe-inline' https://cdn.pendo.io https://cdn.elev.io https://*.zdassets.com https://cdnjs.cloudflare.com https://fonts.googleapis.com https://www.gstatic.com https://pendo-static-4896387203858432.storage.googleapis.com; font-src 'self' data: https://fonts.gstatic.com https://css.zohostatic.com https://*.zopim.com https://themes.googleusercontent.com; report-uri /ducs/v1/public/cspReport; connect-src 'self' https://notify.bugsnag.com https://sessions.bugsnag.com https://*.bettercloud.com https://script.google.com https://script.googleusercontent.com https://*.elev.io https://g.alicdn.com https://fullstory.com wss://*.zopim.com https://*.zopim.com https://ipv4.google.com https://*.fullstory.com wss://*.elev.io https://app.pendo.io; frame-src 'self' https://bettercloud.youcanbook.me https://betterit.cloud https://cdn.elev.io https://accounts.google.com https://app.elev.io; base-uri 'self' https://cdn.elev.io; form-action 'self'; img-src data: blob: * https://cdn.pendo.io https://app.pendo.io https://cdn.pendo.io https://pendo-static-4896387203858432.storage.googleapis.com; media-src https://*.zopim.com;"
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Fri, 14 Sep 2018 17:36:50 GMT"
+                  }
+                }
+              },
+              "Server": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Reblaze Secure Web Gateway"
+                  }
+                }
+              },
+              "Strict-Transport-Security": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "max-age=15768000; includeSubdomains; preload"
+                  }
+                }
+              },
+              "X-Content-Type-Options": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "nosniff"
+                  }
+                }
+              },
+              "X-Frame-Options": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "SAMEORIGIN"
+                  }
+                }
+              },
+              "X-XSS-Protection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "1; mode=block"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json;charset=UTF-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchEmptyGroups"
+                },
+                "example": {
+                  "data": {
+                    "groups": [
+                      {
+                        "id": "fb1b7499-7899-11e8-af14-2d99bbdfb1ad",
+                        "displayValue": "Security - old",
+                        "memberCount": 0
+                      },
+                      {
+                        "id": "200c5e86-20ae-11e8-ae1d-ff13cdb7b94b",
+                        "displayValue": "Engineering - old",
+                        "memberCount": 0
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "Reporting - GraphQL"
+        ],
+        "summary": "GraphQL Search - Query Parameter Search",
+        "description": "Explore your data leveraging the rich relationships defined in GraphQL.\n\nTry out the playground at https://developer.bettercloud.com/#/reporting/explorer\n\nhttps://api.bettercloud.com",
+        "operationId": "Graphql search  query parameter search",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "{ groups(filter: { memberCount: { eq: 0 } }) { id displayValue memberCount } }"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {
+              "Access-Control-Allow-Headers": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Origin, Content-Type, Authorization"
+                  }
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "POST, GET, PUT, OPTIONS, DELETE, PATCH"
+                  }
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "*"
+                  }
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Location"
+                  }
+                }
+              },
+              "Access-Control-Max-Age": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "3600"
+                  }
+                }
+              },
+              "Alt-Svc": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "clear"
+                  }
+                }
+              },
+              "Cache-Control": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "max-age=0, must-revalidate"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "379"
+                  }
+                }
+              },
+              "Content-Security-Policy": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "default-src 'none'; script-src 'self' 'sha256-xWNWy6g4QpHCwZRdmLfI81eyBjRIztPmws2tVdvXBmg=' https://g.alicdn.com https://fullstory.com https://storage.googleapis.com https://*.atlassian.net https://*.elev.io https://cdnjs.cloudflare.com https://ajax.googleapis.com https://*.zopim.com https://*.fullstory.com https://accounts.google.com https://cdn.evergage.com https://bettercloud.evergage.com https://apis.google.com https://www.gstatic.com https://cdn.pendo.io https://app.pendo.io https://cdn.pendo.io https://pendo-io-static.storage.googleapis.com https://pendo-static-4896387203858432.storage.googleapis.com; style-src 'self' 'unsafe-inline' https://cdn.pendo.io https://cdn.elev.io https://*.zdassets.com https://cdnjs.cloudflare.com https://fonts.googleapis.com https://www.gstatic.com https://pendo-static-4896387203858432.storage.googleapis.com; font-src 'self' data: https://fonts.gstatic.com https://css.zohostatic.com https://*.zopim.com https://themes.googleusercontent.com; report-uri /ducs/v1/public/cspReport; connect-src 'self' https://notify.bugsnag.com https://sessions.bugsnag.com https://*.bettercloud.com https://script.google.com https://script.googleusercontent.com https://*.elev.io https://g.alicdn.com https://fullstory.com wss://*.zopim.com https://*.zopim.com https://ipv4.google.com https://*.fullstory.com wss://*.elev.io https://app.pendo.io; frame-src 'self' https://bettercloud.youcanbook.me https://betterit.cloud https://cdn.elev.io https://accounts.google.com https://app.elev.io; base-uri 'self' https://cdn.elev.io; form-action 'self'; img-src data: blob: * https://cdn.pendo.io https://app.pendo.io https://cdn.pendo.io https://pendo-static-4896387203858432.storage.googleapis.com; media-src https://*.zopim.com;"
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Fri, 14 Sep 2018 17:57:25 GMT"
+                  }
+                }
+              },
+              "Server": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Reblaze Secure Web Gateway"
+                  }
+                }
+              },
+              "Strict-Transport-Security": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "max-age=15768000; includeSubdomains; preload"
+                  }
+                }
+              },
+              "Via": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "1.1 google"
+                  }
+                }
+              },
+              "X-Application-Context": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "core-open-api-forward-micro:prod:8080"
+                  }
+                }
+              },
+              "X-Content-Type-Options": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "nosniff"
+                  }
+                }
+              },
+              "X-Frame-Options": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "SAMEORIGIN"
+                  }
+                }
+              },
+              "X-Rate-Limit-ID": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "default-global"
+                  }
+                }
+              },
+              "X-Rate-Limit-Remaining": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "491"
+                  }
+                }
+              },
+              "X-Rate-Limit-Reset": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "09/14/2018 17:57:24"
+                  }
+                }
+              },
+              "X-Rate-Limit-Value": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "500"
+                  }
+                }
+              },
+              "X-XSS-Protection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "1; mode=block"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json;charset=UTF-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchEmptyGroups"
+                },
+                "example": {
+                  "data": {
+                    "groups": [
+                      {
+                        "id": "fb1b7499-7899-11e8-af14-2d99bbdfb1ad",
+                        "displayValue": "Security - old",
+                        "memberCount": 0
+                      },
+                      {
+                        "id": "200c5e86-20ae-11e8-ae1d-ff13cdb7b94b",
+                        "displayValue": "Engineering - old",
+                        "memberCount": 0
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v1/actions": {
+      "get": {
+        "tags": [
+          "Automation"
+        ],
+        "summary": "List Actions",
+        "description": "Retrieve a page of supported BetterCloud Actions.\nUse this endpoint to determine the parameter IDs, names, and optionality.\n\nhttps://api.bettercloud.com",
+        "operationId": "ListActions",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 10
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {
+              "Access-Control-Allow-Headers": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Origin, Content-Type, Authorization"
+                  }
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "POST, GET, PUT, OPTIONS, DELETE, PATCH"
+                  }
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "*"
+                  }
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Location"
+                  }
+                }
+              },
+              "Access-Control-Max-Age": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "3600"
+                  }
+                }
+              },
+              "Alt-Svc": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "clear"
+                  }
+                }
+              },
+              "Cache-Control": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "max-age=0, must-revalidate"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "36"
+                  }
+                }
+              },
+              "Content-Security-Policy": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "default-src 'none'; script-src 'self' 'sha256-xWNWy6g4QpHCwZRdmLfI81eyBjRIztPmws2tVdvXBmg=' https://g.alicdn.com https://fullstory.com https://storage.googleapis.com https://*.atlassian.net https://*.elev.io https://cdnjs.cloudflare.com https://ajax.googleapis.com https://*.zopim.com https://*.fullstory.com https://accounts.google.com https://cdn.evergage.com https://bettercloud.evergage.com https://apis.google.com https://www.gstatic.com https://cdn.pendo.io https://app.pendo.io https://cdn.pendo.io https://pendo-io-static.storage.googleapis.com https://pendo-static-4896387203858432.storage.googleapis.com; style-src 'self' 'unsafe-inline' https://cdn.pendo.io https://cdn.elev.io https://*.zdassets.com https://cdnjs.cloudflare.com https://fonts.googleapis.com https://www.gstatic.com https://pendo-static-4896387203858432.storage.googleapis.com; font-src 'self' data: https://fonts.gstatic.com https://css.zohostatic.com https://*.zopim.com https://themes.googleusercontent.com; report-uri /ducs/v1/public/cspReport; connect-src 'self' https://notify.bugsnag.com https://sessions.bugsnag.com https://*.bettercloud.com https://script.google.com https://script.googleusercontent.com https://*.elev.io https://g.alicdn.com https://fullstory.com wss://*.zopim.com https://*.zopim.com https://ipv4.google.com https://*.fullstory.com wss://*.elev.io https://app.pendo.io; frame-src 'self' https://bettercloud.youcanbook.me https://betterit.cloud https://cdn.elev.io https://accounts.google.com https://app.elev.io; base-uri 'self' https://cdn.elev.io; form-action 'self'; img-src data: blob: * https://cdn.pendo.io https://app.pendo.io https://cdn.pendo.io https://pendo-static-4896387203858432.storage.googleapis.com; media-src https://*.zopim.com;"
+                  }
+                }
+              },
+              "Server": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Reblaze Secure Web Gateway"
+                  }
+                }
+              },
+              "Strict-Transport-Security": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "max-age=15768000; includeSubdomains; preload"
+                  }
+                }
+              },
+              "Via": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "1.1 google"
+                  }
+                }
+              },
+              "X-Content-Type-Options": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "nosniff"
+                  }
+                }
+              },
+              "X-Frame-Options": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "SAMEORIGIN"
+                  }
+                }
+              },
+              "X-XSS-Protection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "1; mode=block"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json;charset=UTF-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListActions"
+                },
+                "example": {
+                  "content": [
+                    {
+                      "id": "aaa7d21e-02eb-4bb4-89dd-f855078bd99e",
+                      "name": "Set User's Manager",
+                      "description": "This action sets a user's manager in Salesforce.",
+                      "parameters": [
+                        {
+                          "id": "87fba1fa-226a-4f51-b82b-ab08216b1d01",
+                          "required": true,
+                          "name": "userId",
+                          "type": "ID"
+                        },
+                        {
+                          "id": "908060ce-e3c7-4308-a059-8da6cde39fa1",
+                          "required": true,
+                          "name": "managerId",
+                          "type": "ID"
+                        },
+                        {
+                          "id": "a2756e1d-c5cc-4a0e-97b2-85ba127e0a52",
+                          "required": false,
+                          "name": "externalId",
+                          "type": "STRING"
+                        },
+                        {
+                          "id": "b6bea60c-8dc9-4bd9-a950-d5f8aa2c6a60",
+                          "required": true,
+                          "name": "connectorId",
+                          "type": "STRING"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "d5dc3869-c740-48d6-b6b2-05133cd78457",
+                      "name": "No Op",
+                      "description": "This is a no operation action.",
+                      "parameters": [
+                        {
+                          "id": "d5dc3869-c740-48d6-b6b2-aaaaaaaaaaaa",
+                          "required": false,
+                          "name": "success",
+                          "type": "BOOLEAN"
+                        },
+                        {
+                          "id": "d5dc3869-c740-48d6-b6b2-dddddddddddd",
+                          "required": false,
+                          "name": "retryCount",
+                          "type": "INTEGER"
+                        },
+                        {
+                          "id": "d5dc3869-c740-48d6-b6b2-eeeeeeeeeeee",
+                          "required": false,
+                          "name": "sleep",
+                          "type": "INTEGER"
+                        },
+                        {
+                          "id": "b6bea60c-8dc9-4bd9-a950-d5f8aa2c6a60",
+                          "required": true,
+                          "name": "connectorId",
+                          "type": "STRING"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "66003d08-bb51-4cc7-83bf-cd0b30973197",
+                      "name": "Edit User's Profile",
+                      "description": "This action edits a user's profile in Salesforce",
+                      "parameters": [
+                        {
+                          "id": "a08a4c58-3f7e-4c0f-a8f3-a844c48cf63b",
+                          "required": true,
+                          "name": "userId",
+                          "type": "ID"
+                        },
+                        {
+                          "id": "68e4914e-d68e-4a55-b97e-7e182adc6015",
+                          "required": true,
+                          "name": "profileId",
+                          "type": "ID"
+                        },
+                        {
+                          "id": "b6bea60c-8dc9-4bd9-a950-d5f8aa2c6a60",
+                          "required": true,
+                          "name": "connectorId",
+                          "type": "STRING"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "b42eeca1-200b-4692-adad-73ccac613713",
+                      "name": "Remove Mobile Device",
+                      "description": "This action removes a user's device from Mobile Device Management in the Google Admin Console.",
+                      "parameters": [
+                        {
+                          "id": "8c11ee04-2da6-419b-b99e-2eff2a20933d",
+                          "required": true,
+                          "name": "userId",
+                          "type": "ID"
+                        },
+                        {
+                          "id": "b6bea60c-8dc9-4bd9-a950-d5f8aa2c6a60",
+                          "required": true,
+                          "name": "connectorId",
+                          "type": "STRING"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "0b57807a-5801-434a-bc92-aca1acafdad6",
+                      "name": "Clear User Sessions",
+                      "description": "This action clears a user's sessions in Okta.",
+                      "parameters": [
+                        {
+                          "id": "9a9a8920-a799-4996-80a1-fc7f5bca3d52",
+                          "required": true,
+                          "name": "userId",
+                          "type": "ID"
+                        },
+                        {
+                          "id": "b6bea60c-8dc9-4bd9-a950-d5f8aa2c6a60",
+                          "required": true,
+                          "name": "connectorId",
+                          "type": "STRING"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "4f6971c5-1813-4e7d-ba16-5ced9f9a156e",
+                      "name": "Suspend User",
+                      "description": "This actions suspends a user account in Okta.",
+                      "parameters": [
+                        {
+                          "id": "e302e35c-f6ec-433f-984a-db350da7fa20",
+                          "required": true,
+                          "name": "userId",
+                          "type": "ID"
+                        },
+                        {
+                          "id": "b6bea60c-8dc9-4bd9-a950-d5f8aa2c6a60",
+                          "required": true,
+                          "name": "connectorId",
+                          "type": "STRING"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "6760bc8f-32a1-4481-a7b1-f9a97ca33670",
+                      "name": "Set File Collaborator Permissions",
+                      "description": "This action sets the permissions for a file's collaborators in Google Drive.",
+                      "parameters": [
+                        {
+                          "id": "23f3c45c-0eae-4557-9bb3-358fe5033939",
+                          "required": true,
+                          "name": "userId",
+                          "type": "ID"
+                        },
+                        {
+                          "id": "215e250b-4831-488b-934d-388cd0179018",
+                          "required": true,
+                          "name": "fileId",
+                          "type": "ID"
+                        },
+                        {
+                          "id": "a0f8221f-1059-46a9-9787-e09512b8ea1a",
+                          "required": true,
+                          "name": "role",
+                          "type": "STRING"
+                        },
+                        {
+                          "id": "b6bea60c-8dc9-4bd9-a950-d5f8aa2c6a60",
+                          "required": true,
+                          "name": "connectorId",
+                          "type": "STRING"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "76b9943e-8266-46c3-9b6f-a87efd4d6557",
+                      "parameters": [
+                        {
+                          "id": "099c595a-d276-416a-8a42-48d69dbdd844",
+                          "required": false,
+                          "name": "externalId",
+                          "type": "STRING"
+                        },
+                        {
+                          "id": "e6f1facc-346b-479e-bd00-ecf094bb73de",
+                          "required": true,
+                          "name": "userId",
+                          "type": "ID"
+                        },
+                        {
+                          "id": "c0dfdb94-e3c4-4b83-9740-5d58499688be",
+                          "required": false,
+                          "name": "returnIM",
+                          "type": "BOOLEAN"
+                        },
+                        {
+                          "id": "b6bea60c-8dc9-4bd9-a950-d5f8aa2c6a60",
+                          "required": true,
+                          "name": "connectorId",
+                          "type": "STRING"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "081a7b46-5586-4426-9111-613950accfc7",
+                      "name": "Wipe Mobile Device",
+                      "description": "This action allows you to perform an account wipe or mobile wipe of a user's device. For more information about using this feature and the prerequisites for it to work correctly, please see this <a href=\"https://support.google.com/a/answer/173390\" target=\"_blank\">Google Help article</a>.",
+                      "parameters": [
+                        {
+                          "id": "2bdd3c13-b4ee-458c-b3c0-c82be9aba33d",
+                          "required": true,
+                          "name": "action",
+                          "type": "STRING"
+                        },
+                        {
+                          "id": "7e0a6b67-605e-407a-8d53-f7a88e43895d",
+                          "required": true,
+                          "name": "userId",
+                          "type": "ID"
+                        },
+                        {
+                          "id": "b6bea60c-8dc9-4bd9-a950-d5f8aa2c6a60",
+                          "required": true,
+                          "name": "connectorId",
+                          "type": "STRING"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "3399ec69-7d59-4637-815f-46cfbf5ace52",
+                      "name": "Edit User's Phone Number",
+                      "description": "This action edits a user's work or home phone number in Google. If 'Replace existing phone number' is selected, then all phone numbers of the selected type (work or home) will be overwritten.",
+                      "parameters": [
+                        {
+                          "id": "f8b9996a-3bc7-42fe-82d6-8c8387edac7a",
+                          "required": true,
+                          "name": "userId",
+                          "type": "ID"
+                        },
+                        {
+                          "id": "162964c5-b46e-47ff-a2c5-91005f4b7d15",
+                          "required": false,
+                          "name": "userPhoneNumber.value",
+                          "type": "STRING"
+                        },
+                        {
+                          "id": "cf242b5d-f74d-4e12-8d62-dae82b938392",
+                          "required": false,
+                          "name": "userPhoneNumber.type",
+                          "type": "STRING"
+                        },
+                        {
+                          "id": "c81e921f-6962-4707-8519-fbb390abdde9",
+                          "required": false,
+                          "name": "userPhoneNumber.primary",
+                          "type": "BOOLEAN"
+                        },
+                        {
+                          "id": "ca26eac3-5724-4d36-9da7-d656cee84b6f",
+                          "required": false,
+                          "name": "override",
+                          "type": "BOOLEAN"
+                        },
+                        {
+                          "id": "b6bea60c-8dc9-4bd9-a950-d5f8aa2c6a60",
+                          "required": true,
+                          "name": "connectorId",
+                          "type": "STRING"
+                        }
+                      ]
+                    }
+                  ],
+                  "last": false,
+                  "totalPages": 21,
+                  "totalElements": 206,
+                  "first": true,
+                  "numberOfElements": 10,
+                  "size": 10,
+                  "number": 0
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v1/actions/{actionId}/execute": {
+      "post": {
+        "tags": [
+          "Automation"
+        ],
+        "summary": "Execute Action",
+        "description": "Execute an action using BetterCloud's Action Engine.\n\nActions are executed asynchronously. After successfully initiating an action, an `executionId` will be returned in the response body.\nThe `executionId` can be used to poll the execution status.\n\nUse the above `List Action` endpoint to determine the required parameters for the action you wish to execute.  For this request body, you will provide an object with key-value pairs.  Looking back at the above endpoint, for each parameter from that response, the `id` value should be a key in this request body and the value should be the value for the parameter. \nFor example, the `Create User` for G Suite action has a required parameter for email with `id`: 4ea33cfc-f5d8-4b2c-9cba-9d8c05096ee3.  In your request body, you would have an entry `\"4ea33cfc-f5d8-4b2c-9cba-9d8c05096ee3\": \"user@domain.com\"`\n\nA common use case is to execute a specific action every time an event occurs in another system.  For example, if you want to have BetterCloud create a Google user everytime a user is created in BambooHR, you can configure BambooHR to send push notifications to this endpoint.  The request payload from BambooHR will not match our expected contract, so you would have to use a pre-request script (can be created at https://developer.bettercloud.com/#/scripts/new).  In order to tell our system what pre-request scripts you would like to run, you can apply the list of script IDs as either the `BC-Transform-IDs` header or the `BC-Transform-IDs` query parameter.  If you provide multiple script IDs, they will be executed in the order provided.\n\nhttps://api.bettercloud.com",
+        "operationId": "ExecuteAction",
+        "parameters": [
+          {
+            "name": "actionId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExecuteActionRequest"
+              },
+              "example": "{\"04d17606-6601-11e5-9d70-feff819cdc9f\":\"5a410328-34be-4fd1-b6c6-89a63a0219f2\",\"fffd0740-660e-11e5-9d70-feff819cdc9f\":true,\"b6bea60c-8dc9-4bd9-a950-d5f8aa2c6a60\":\"acbdd1754-e1a3-01e7-8d81-abc60a2f477b\"}"
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {
+              "Access-Control-Allow-Headers": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Origin, Content-Type, Authorization"
+                  }
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "POST, GET, PUT, OPTIONS, DELETE, PATCH"
+                  }
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "*"
+                  }
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Location"
+                  }
+                }
+              },
+              "Access-Control-Max-Age": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "3600"
+                  }
+                }
+              },
+              "Alt-Svc": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "clear"
+                  }
+                }
+              },
+              "Cache-Control": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "max-age=0, must-revalidate"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "36"
+                  }
+                }
+              },
+              "Content-Security-Policy": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "default-src 'none'; script-src 'self' 'sha256-xWNWy6g4QpHCwZRdmLfI81eyBjRIztPmws2tVdvXBmg=' https://g.alicdn.com https://fullstory.com https://storage.googleapis.com https://*.atlassian.net https://*.elev.io https://cdnjs.cloudflare.com https://ajax.googleapis.com https://*.zopim.com https://*.fullstory.com https://accounts.google.com https://cdn.evergage.com https://bettercloud.evergage.com https://apis.google.com https://www.gstatic.com https://cdn.pendo.io https://app.pendo.io https://cdn.pendo.io https://pendo-io-static.storage.googleapis.com https://pendo-static-4896387203858432.storage.googleapis.com; style-src 'self' 'unsafe-inline' https://cdn.pendo.io https://cdn.elev.io https://*.zdassets.com https://cdnjs.cloudflare.com https://fonts.googleapis.com https://www.gstatic.com https://pendo-static-4896387203858432.storage.googleapis.com; font-src 'self' data: https://fonts.gstatic.com https://css.zohostatic.com https://*.zopim.com https://themes.googleusercontent.com; report-uri /ducs/v1/public/cspReport; connect-src 'self' https://notify.bugsnag.com https://sessions.bugsnag.com https://*.bettercloud.com https://script.google.com https://script.googleusercontent.com https://*.elev.io https://g.alicdn.com https://fullstory.com wss://*.zopim.com https://*.zopim.com https://ipv4.google.com https://*.fullstory.com wss://*.elev.io https://app.pendo.io; frame-src 'self' https://bettercloud.youcanbook.me https://betterit.cloud https://cdn.elev.io https://accounts.google.com https://app.elev.io; base-uri 'self' https://cdn.elev.io; form-action 'self'; img-src data: blob: * https://cdn.pendo.io https://app.pendo.io https://cdn.pendo.io https://pendo-static-4896387203858432.storage.googleapis.com; media-src https://*.zopim.com;"
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Fri, 14 Sep 2018 17:54:41 GMT"
+                  }
+                }
+              },
+              "Server": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Reblaze Secure Web Gateway"
+                  }
+                }
+              },
+              "Strict-Transport-Security": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "max-age=15768000; includeSubdomains; preload"
+                  }
+                }
+              },
+              "Via": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "1.1 google"
+                  }
+                }
+              },
+              "X-Content-Type-Options": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "nosniff"
+                  }
+                }
+              },
+              "X-Frame-Options": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "SAMEORIGIN"
+                  }
+                }
+              },
+              "X-XSS-Protection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "1; mode=block"
+                  }
+                }
+              }
+            },
+            "content": {
+              "text/plain;charset=UTF-8": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v1/actions/executions": {
+      "post": {
+        "tags": [
+          "Automation"
+        ],
+        "summary": "Execute Action [DEPRECATED]",
+        "description": "Execute an action using BetterCloud's Action Engine.\n\nActions are executed asynchronously. After successfully initiating an action, an `executionId` will be returned in the response body.\nThe `executionId` can be used to poll the execution status.\n\nA common use case is to execute a specific action every time an event occurs in another system.  For example, if you want to have BetterCloud create a Google user everytime a user is created in BambooHR, you can configure BambooHR to send push notifications to this endpoint.  The request payload from BambooHR will not match our expected contract, so you would have to use a pre-request script (can be created at https://developer.bettercloud.com/#/scripts/new).  In order to tell our system what pre-request scripts you would like to run, you can apply the list of script IDs as either the `BC-Transform-IDs` header or the `BC-Transform-IDs` query parameter.  If you provide multiple script IDs, they will be executed in the order provided.\n\nThe best way to determine the request body is to view the Network Tab in your browser tools while executing the action inside BCX.  Because this experience is not pleasant, we have simplified the contract and encourage using the above `Execute Action`.\n\nDeprecated in favor of the above `Execute Action`\n\nhttps://api.bettercloud.com",
+        "operationId": "ExecuteAction[deprecated]",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExecuteAction[DEPRECATED]Request"
+              },
+              "example": "{\"actionId\":\"6a9d3ed0-6600-11e5-9d70-feff819cdc9f\",\"params\":{\"input\":{\"userId\":{\"format\":\"DYN_FIELDS\",\"templateKeys\":[{\"integrationId\":\"acbdd1754-e1a3-01e7-8d81-abc60a2f477b\",\"dynamicFieldIds\":{\"5a410328-34be-4fd1-b6c6-89a63a0219f2\":\"c969f803-5693-4fe6-baa8-2d9a1b5023b8\"},\"sourceContext\":{\"BCUser\":[{\"value\":\"f158a2d2-a77c-11e6-8aac-89b859b0594b\",\"displayValue\":\"John Smith\"}]},\"valid\":true}],\"value\":\"{{5a410328-34be-4fd1-b6c6-89a63a0219f2}}\"},\"password\":{\"format\":\"LITERAL\",\"value\":\"MyNewPassword\"},\"requirePasswordChange\":{\"format\":\"LITERAL\",\"value\":true},\"integrationId\":{\"format\":\"LITERAL\",\"value\":\"acbdd1754-e1a3-01e7-8d81-abc60a2f477b\"}}}}"
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {
+              "Access-Control-Allow-Headers": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Origin, Content-Type, Authorization"
+                  }
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "POST, GET, PUT, OPTIONS, DELETE, PATCH"
+                  }
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "*"
+                  }
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Location"
+                  }
+                }
+              },
+              "Access-Control-Max-Age": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "3600"
+                  }
+                }
+              },
+              "Alt-Svc": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "clear"
+                  }
+                }
+              },
+              "Cache-Control": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "max-age=0, must-revalidate"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "36"
+                  }
+                }
+              },
+              "Content-Security-Policy": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "default-src 'none'; script-src 'self' 'sha256-xWNWy6g4QpHCwZRdmLfI81eyBjRIztPmws2tVdvXBmg=' https://g.alicdn.com https://fullstory.com https://storage.googleapis.com https://*.atlassian.net https://*.elev.io https://cdnjs.cloudflare.com https://ajax.googleapis.com https://*.zopim.com https://*.fullstory.com https://accounts.google.com https://cdn.evergage.com https://bettercloud.evergage.com https://apis.google.com https://www.gstatic.com https://cdn.pendo.io https://app.pendo.io https://cdn.pendo.io https://pendo-io-static.storage.googleapis.com https://pendo-static-4896387203858432.storage.googleapis.com; style-src 'self' 'unsafe-inline' https://cdn.pendo.io https://cdn.elev.io https://*.zdassets.com https://cdnjs.cloudflare.com https://fonts.googleapis.com https://www.gstatic.com https://pendo-static-4896387203858432.storage.googleapis.com; font-src 'self' data: https://fonts.gstatic.com https://css.zohostatic.com https://*.zopim.com https://themes.googleusercontent.com; report-uri /ducs/v1/public/cspReport; connect-src 'self' https://notify.bugsnag.com https://sessions.bugsnag.com https://*.bettercloud.com https://script.google.com https://script.googleusercontent.com https://*.elev.io https://g.alicdn.com https://fullstory.com wss://*.zopim.com https://*.zopim.com https://ipv4.google.com https://*.fullstory.com wss://*.elev.io https://app.pendo.io; frame-src 'self' https://bettercloud.youcanbook.me https://betterit.cloud https://cdn.elev.io https://accounts.google.com https://app.elev.io; base-uri 'self' https://cdn.elev.io; form-action 'self'; img-src data: blob: * https://cdn.pendo.io https://app.pendo.io https://cdn.pendo.io https://pendo-static-4896387203858432.storage.googleapis.com; media-src https://*.zopim.com;"
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Fri, 14 Sep 2018 17:54:41 GMT"
+                  }
+                }
+              },
+              "Server": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Reblaze Secure Web Gateway"
+                  }
+                }
+              },
+              "Strict-Transport-Security": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "max-age=15768000; includeSubdomains; preload"
+                  }
+                }
+              },
+              "Via": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "1.1 google"
+                  }
+                }
+              },
+              "X-Content-Type-Options": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "nosniff"
+                  }
+                }
+              },
+              "X-Frame-Options": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "SAMEORIGIN"
+                  }
+                }
+              },
+              "X-XSS-Protection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "1; mode=block"
+                  }
+                }
+              }
+            },
+            "content": {
+              "text/plain;charset=UTF-8": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v1/workflows": {
+      "get": {
+        "tags": [
+          "Automation"
+        ],
+        "summary": "List Workflows",
+        "description": "Retrieve a list of your BetterCloud Workflow names and IDs.\nUse this endpoint for auditing the names and count of workflows or to identify the `workflowId` needed to execute a specific workflow.\n\nhttps://api.bettercloud.com",
+        "operationId": "ListWorkflows",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {
+              "Access-Control-Allow-Methods": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "POST, GET, PUT, OPTIONS, DELETE, PATCH:"
+                  }
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "*"
+                  }
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Location"
+                  }
+                }
+              },
+              "Access-Control-Max-Age": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "3600"
+                  }
+                }
+              },
+              "Alt-Svc": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "clear"
+                  }
+                }
+              },
+              "Cache-Control": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "max-age=0, must-revalidate"
+                  }
+                }
+              },
+              "Content-Encoding": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "gzip"
+                  }
+                }
+              },
+              "Content-Security-Policy": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "default-src 'none'; script-src 'self' 'sha256-xWNWy6g4QpHCwZRdmLfI81eyBjRIztPmws2tVdvXBmg=' https://g.alicdn.com https://fullstory.com https://storage.googleapis.com https://*.atlassian.net https://*.elev.io https://cdnjs.cloudflare.com https://ajax.googleapis.com https://*.zopim.com https://*.fullstory.com https://accounts.google.com https://cdn.evergage.com https://bettercloud.evergage.com https://apis.google.com https://www.gstatic.com https://cdn.pendo.io https://app.pendo.io https://cdn.pendo.io https://pendo-io-static.storage.googleapis.com https://pendo-static-4896387203858432.storage.googleapis.com; style-src 'self' 'unsafe-inline' https://cdn.pendo.io https://cdn.elev.io https://*.zdassets.com https://cdnjs.cloudflare.com https://fonts.googleapis.com https://www.gstatic.com https://pendo-static-4896387203858432.storage.googleapis.com; font-src 'self' data: https://fonts.gstatic.com https://css.zohostatic.com https://*.zopim.com https://themes.googleusercontent.com; report-uri /ducs/v1/public/cspReport; connect-src 'self' https://notify.bugsnag.com https://sessions.bugsnag.com https://*.bettercloud.com https://script.google.com https://script.googleusercontent.com https://*.elev.io https://g.alicdn.com https://fullstory.com wss://*.zopim.com https://*.zopim.com https://ipv4.google.com https://*.fullstory.com wss://*.elev.io https://app.pendo.io; frame-src 'self' https://bettercloud.youcanbook.me https://betterit.cloud https://cdn.elev.io https://accounts.google.com https://app.elev.io; base-uri 'self' https://cdn.elev.io; form-action 'self'; img-src data: blob: * https://cdn.pendo.io https://app.pendo.io https://cdn.pendo.io https://pendo-static-4896387203858432.storage.googleapis.com; media-src https://*.zopim.com;"
+                  }
+                }
+              },
+              "Server": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Reblaze Secure Web Gateway"
+                  }
+                }
+              },
+              "Strict-Transport-Security": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "max-age=15768000; includeSubdomains; preload"
+                  }
+                }
+              },
+              "Transfer-Encoding": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "chunked"
+                  }
+                }
+              },
+              "Vary": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Accept-Encoding"
+                  }
+                }
+              },
+              "Via": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "1.1 google"
+                  }
+                }
+              },
+              "X-Content-Type-Options": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "nosniff"
+                  }
+                }
+              },
+              "X-Frame-Options": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "SAMEORIGIN"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json;charset=UTF-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListWorkflows"
+                },
+                "example": {
+                  "content": [
+                    {
+                      "workflowId": "09c65d3d-ff3a-4059-b9a7-dbc21c66a571",
+                      "name": "Alert Remediation | Finance File Public Link"
+                    },
+                    {
+                      "workflowId": "33910963-4ed2-4125-93ab-501ae7d16c87",
+                      "name": "Offboarding | G Suite Only"
+                    },
+                    {
+                      "workflowId": "0115ca0b-5999-4fa9-aad0-0913b7553dde",
+                      "name": "Offboarding | Okta"
+                    },
+                    {
+                      "workflowId": "015b1c0a-50b7-4ea6-96ca-04baf65f12e6",
+                      "name": "Onboarding | G Suite Only"
+                    },
+                    {
+                      "workflowId": "f633fee1-203c-42da-b3ee-261e5d7d3a49",
+                      "name": "Onboarding | Multi-Saas w/ API"
+                    },
+                    {
+                      "workflowId": "41d97d49-8da4-47eb-b40c-668b7d4b5bf8",
+                      "name": "Platform API | Splunk Log Capture Workflow"
+                    }
+                  ],
+                  "number": 0,
+                  "size": 6,
+                  "totalElements": 6,
+                  "last": true,
+                  "totalPages": 1,
+                  "first": true,
+                  "numberOfElements": 6
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v1/workflows/{workflowId}": {
+      "get": {
+        "tags": [
+          "Automation"
+        ],
+        "summary": "Get Workflow",
+        "description": "Retrieve the metadata for a Workflow.\nUse this endpoint for determining the required parameter keys for executing the specific workflow.\n\n\nhttps://api.bettercloud.com",
+        "operationId": "GetWorkflow",
+        "parameters": [
+          {
+            "name": "workflowId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "application/json;charset=UTF-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserWorkflow"
+                },
+                "example": {
+                  "integrationId": "acf671e1-85a7-11e6-85bb-b974cab0ac07",
+                  "providerId": "7c7cb499-00ef-11e6-a8bb-09d7f4163a23",
+                  "parameters": [
+                    {
+                      "key": "userId"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowDoesNotExist"
+                },
+                "example": {
+                  "code": "58490",
+                  "message": "Failed to retrieve event details for workflow 0115ca0b-5999-4fa9-aad0-0913b7553dde",
+                  "description": "",
+                  "link": "",
+                  "errorCorrelationId": ""
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v1/workflows/{workflowId}/execute": {
+      "post": {
+        "tags": [
+          "Automation"
+        ],
+        "summary": "Execute Workflow",
+        "description": "Execute your BetterCloud Workflows through the API.\n\nWorkflows are executed asynchronously. See the above endpoint for retrieving the properties that are required to execute the workflow.\n\nhttps://api.bettercloud.com",
+        "operationId": "ExecuteWorkflow",
+        "parameters": [
+          {
+            "name": "workflowId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExecuteWorkflowRequest"
+              },
+              "example": "{\"userId\":\"123456\"}"
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {
+              "Access-Control-Allow-Headers": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Origin, Content-Type, Authorization"
+                  }
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "POST, GET, PUT, OPTIONS, DELETE, PATCH"
+                  }
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "*"
+                  }
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Location"
+                  }
+                }
+              },
+              "Access-Control-Max-Age": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "3600"
+                  }
+                }
+              },
+              "Alt-Svc": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "clear"
+                  }
+                }
+              },
+              "Cache-Control": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "max-age=0, must-revalidate"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "36"
+                  }
+                }
+              },
+              "Content-Security-Policy": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "default-src 'none'; script-src 'self' 'sha256-xWNWy6g4QpHCwZRdmLfI81eyBjRIztPmws2tVdvXBmg=' https://g.alicdn.com https://fullstory.com https://storage.googleapis.com https://*.atlassian.net https://*.elev.io https://cdnjs.cloudflare.com https://ajax.googleapis.com https://*.zopim.com https://*.fullstory.com https://accounts.google.com https://cdn.evergage.com https://bettercloud.evergage.com https://apis.google.com https://www.gstatic.com https://cdn.pendo.io https://app.pendo.io https://cdn.pendo.io https://pendo-io-static.storage.googleapis.com https://pendo-static-4896387203858432.storage.googleapis.com; style-src 'self' 'unsafe-inline' https://cdn.pendo.io https://cdn.elev.io https://*.zdassets.com https://cdnjs.cloudflare.com https://fonts.googleapis.com https://www.gstatic.com https://pendo-static-4896387203858432.storage.googleapis.com; font-src 'self' data: https://fonts.gstatic.com https://css.zohostatic.com https://*.zopim.com https://themes.googleusercontent.com; report-uri /ducs/v1/public/cspReport; connect-src 'self' https://notify.bugsnag.com https://sessions.bugsnag.com https://*.bettercloud.com https://script.google.com https://script.googleusercontent.com https://*.elev.io https://g.alicdn.com https://fullstory.com wss://*.zopim.com https://*.zopim.com https://ipv4.google.com https://*.fullstory.com wss://*.elev.io https://app.pendo.io; frame-src 'self' https://bettercloud.youcanbook.me https://betterit.cloud https://cdn.elev.io https://accounts.google.com https://app.elev.io; base-uri 'self' https://cdn.elev.io; form-action 'self'; img-src data: blob: * https://cdn.pendo.io https://app.pendo.io https://cdn.pendo.io https://pendo-static-4896387203858432.storage.googleapis.com; media-src https://*.zopim.com;"
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Fri, 14 Sep 2018 17:54:41 GMT"
+                  }
+                }
+              },
+              "Server": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Reblaze Secure Web Gateway"
+                  }
+                }
+              },
+              "Strict-Transport-Security": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "max-age=15768000; includeSubdomains; preload"
+                  }
+                }
+              },
+              "X-Content-Type-Options": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "nosniff"
+                  }
+                }
+              },
+              "X-Frame-Options": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "SAMEORIGIN"
+                  }
+                }
+              },
+              "X-XSS-Protection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "1; mode=block"
+                  }
+                }
+              }
+            },
+            "content": {
+              "text/plain;charset=UTF-8": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ValidAPIToken": {
+        "title": "ValidAPIToken",
+        "required": [
+          "id",
+          "tenantId",
+          "name",
+          "description",
+          "createdBy",
+          "createdAt",
+          "lastUsedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "tenantId": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "lastUsedAt": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "id": "657701227ab861f866b27715f794689df3fede7c97494580cbbd54e3c9cdc898",
+          "tenantId": "b5cae899-e406-11e7-b4d6-6f545c7ffda3",
+          "name": "David's token",
+          "description": "Using this token to generate and test API documentation.",
+          "createdBy": "d47dd83f-b066-11e8-b6ab-4b1de1fa506e",
+          "createdAt": 1536844097,
+          "lastUsedAt": 1536946621
+        }
+      },
+      "GraphQLSearch-RequestBodySearchRequest": {
+        "title": "GraphQLSearch-RequestBodySearchRequest",
+        "required": [
+          "query"
+        ],
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "query": "{ groups(filter: { memberCount: { eq: 0 } }) { id displayValue memberCount } } "
+        }
+      },
+      "SearchEmptyGroups": {
+        "title": "SearchEmptyGroups",
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Data"
+          }
+        },
+        "example": {
+          "data": {
+            "groups": [
+              {
+                "id": "fb1b7499-7899-11e8-af14-2d99bbdfb1ad",
+                "displayValue": "Security - old",
+                "memberCount": 0
+              },
+              {
+                "id": "200c5e86-20ae-11e8-ae1d-ff13cdb7b94b",
+                "displayValue": "Engineering - old",
+                "memberCount": 0
+              }
+            ]
+          }
+        }
+      },
+      "Data": {
+        "title": "Data",
+        "required": [
+          "groups"
+        ],
+        "type": "object",
+        "properties": {
+          "groups": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Group"
+            },
+            "description": ""
+          }
+        }
+      },
+      "Group": {
+        "title": "Group",
+        "required": [
+          "id",
+          "displayValue",
+          "memberCount"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "fb1b7499-7899-11e8-af14-2d99bbdfb1ad"
+          },
+          "displayValue": {
+            "type": "string",
+            "example": "Security - old"
+          },
+          "memberCount": {
+            "type": "integer",
+            "format": "int32",
+            "example": 0
+          }
+        }
+      },
+      "ListActions": {
+        "title": "ListActions",
+        "required": [
+          "content",
+          "last",
+          "totalPages",
+          "totalElements",
+          "first",
+          "numberOfElements",
+          "size",
+          "number"
+        ],
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Content"
+            },
+            "description": ""
+          },
+          "last": {
+            "type": "boolean"
+          },
+          "totalPages": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalElements": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "first": {
+            "type": "boolean"
+          },
+          "numberOfElements": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "number": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "content": [
+            {
+              "id": "aaa7d21e-02eb-4bb4-89dd-f855078bd99e",
+              "name": "Set User's Manager",
+              "description": "This action sets a user's manager in Salesforce.",
+              "parameters": [
+                {
+                  "id": "87fba1fa-226a-4f51-b82b-ab08216b1d01",
+                  "required": true,
+                  "name": "userId",
+                  "type": "ID"
+                },
+                {
+                  "id": "908060ce-e3c7-4308-a059-8da6cde39fa1",
+                  "required": true,
+                  "name": "managerId",
+                  "type": "ID"
+                },
+                {
+                  "id": "a2756e1d-c5cc-4a0e-97b2-85ba127e0a52",
+                  "required": false,
+                  "name": "externalId",
+                  "type": "STRING"
+                },
+                {
+                  "id": "b6bea60c-8dc9-4bd9-a950-d5f8aa2c6a60",
+                  "required": true,
+                  "name": "connectorId",
+                  "type": "STRING"
+                }
+              ]
+            },
+            {
+              "id": "d5dc3869-c740-48d6-b6b2-05133cd78457",
+              "name": "No Op",
+              "description": "This is a no operation action.",
+              "parameters": [
+                {
+                  "id": "d5dc3869-c740-48d6-b6b2-aaaaaaaaaaaa",
+                  "required": false,
+                  "name": "success",
+                  "type": "BOOLEAN"
+                },
+                {
+                  "id": "d5dc3869-c740-48d6-b6b2-dddddddddddd",
+                  "required": false,
+                  "name": "retryCount",
+                  "type": "INTEGER"
+                },
+                {
+                  "id": "d5dc3869-c740-48d6-b6b2-eeeeeeeeeeee",
+                  "required": false,
+                  "name": "sleep",
+                  "type": "INTEGER"
+                },
+                {
+                  "id": "b6bea60c-8dc9-4bd9-a950-d5f8aa2c6a60",
+                  "required": true,
+                  "name": "connectorId",
+                  "type": "STRING"
+                }
+              ]
+            },
+            {
+              "id": "66003d08-bb51-4cc7-83bf-cd0b30973197",
+              "name": "Edit User's Profile",
+              "description": "This action edits a user's profile in Salesforce",
+              "parameters": [
+                {
+                  "id": "a08a4c58-3f7e-4c0f-a8f3-a844c48cf63b",
+                  "required": true,
+                  "name": "userId",
+                  "type": "ID"
+                },
+                {
+                  "id": "68e4914e-d68e-4a55-b97e-7e182adc6015",
+                  "required": true,
+                  "name": "profileId",
+                  "type": "ID"
+                },
+                {
+                  "id": "b6bea60c-8dc9-4bd9-a950-d5f8aa2c6a60",
+                  "required": true,
+                  "name": "connectorId",
+                  "type": "STRING"
+                }
+              ]
+            },
+            {
+              "id": "b42eeca1-200b-4692-adad-73ccac613713",
+              "name": "Remove Mobile Device",
+              "description": "This action removes a user's device from Mobile Device Management in the Google Admin Console.",
+              "parameters": [
+                {
+                  "id": "8c11ee04-2da6-419b-b99e-2eff2a20933d",
+                  "required": true,
+                  "name": "userId",
+                  "type": "ID"
+                },
+                {
+                  "id": "b6bea60c-8dc9-4bd9-a950-d5f8aa2c6a60",
+                  "required": true,
+                  "name": "connectorId",
+                  "type": "STRING"
+                }
+              ]
+            },
+            {
+              "id": "0b57807a-5801-434a-bc92-aca1acafdad6",
+              "name": "Clear User Sessions",
+              "description": "This action clears a user's sessions in Okta.",
+              "parameters": [
+                {
+                  "id": "9a9a8920-a799-4996-80a1-fc7f5bca3d52",
+                  "required": true,
+                  "name": "userId",
+                  "type": "ID"
+                },
+                {
+                  "id": "b6bea60c-8dc9-4bd9-a950-d5f8aa2c6a60",
+                  "required": true,
+                  "name": "connectorId",
+                  "type": "STRING"
+                }
+              ]
+            },
+            {
+              "id": "4f6971c5-1813-4e7d-ba16-5ced9f9a156e",
+              "name": "Suspend User",
+              "description": "This actions suspends a user account in Okta.",
+              "parameters": [
+                {
+                  "id": "e302e35c-f6ec-433f-984a-db350da7fa20",
+                  "required": true,
+                  "name": "userId",
+                  "type": "ID"
+                },
+                {
+                  "id": "b6bea60c-8dc9-4bd9-a950-d5f8aa2c6a60",
+                  "required": true,
+                  "name": "connectorId",
+                  "type": "STRING"
+                }
+              ]
+            },
+            {
+              "id": "6760bc8f-32a1-4481-a7b1-f9a97ca33670",
+              "name": "Set File Collaborator Permissions",
+              "description": "This action sets the permissions for a file's collaborators in Google Drive.",
+              "parameters": [
+                {
+                  "id": "23f3c45c-0eae-4557-9bb3-358fe5033939",
+                  "required": true,
+                  "name": "userId",
+                  "type": "ID"
+                },
+                {
+                  "id": "215e250b-4831-488b-934d-388cd0179018",
+                  "required": true,
+                  "name": "fileId",
+                  "type": "ID"
+                },
+                {
+                  "id": "a0f8221f-1059-46a9-9787-e09512b8ea1a",
+                  "required": true,
+                  "name": "role",
+                  "type": "STRING"
+                },
+                {
+                  "id": "b6bea60c-8dc9-4bd9-a950-d5f8aa2c6a60",
+                  "required": true,
+                  "name": "connectorId",
+                  "type": "STRING"
+                }
+              ]
+            },
+            {
+              "id": "76b9943e-8266-46c3-9b6f-a87efd4d6557",
+              "parameters": [
+                {
+                  "id": "099c595a-d276-416a-8a42-48d69dbdd844",
+                  "required": false,
+                  "name": "externalId",
+                  "type": "STRING"
+                },
+                {
+                  "id": "e6f1facc-346b-479e-bd00-ecf094bb73de",
+                  "required": true,
+                  "name": "userId",
+                  "type": "ID"
+                },
+                {
+                  "id": "c0dfdb94-e3c4-4b83-9740-5d58499688be",
+                  "required": false,
+                  "name": "returnIM",
+                  "type": "BOOLEAN"
+                },
+                {
+                  "id": "b6bea60c-8dc9-4bd9-a950-d5f8aa2c6a60",
+                  "required": true,
+                  "name": "connectorId",
+                  "type": "STRING"
+                }
+              ]
+            },
+            {
+              "id": "081a7b46-5586-4426-9111-613950accfc7",
+              "name": "Wipe Mobile Device",
+              "description": "This action allows you to perform an account wipe or mobile wipe of a user's device. For more information about using this feature and the prerequisites for it to work correctly, please see this <a href=\"https://support.google.com/a/answer/173390\" target=\"_blank\">Google Help article</a>.",
+              "parameters": [
+                {
+                  "id": "2bdd3c13-b4ee-458c-b3c0-c82be9aba33d",
+                  "required": true,
+                  "name": "action",
+                  "type": "STRING"
+                },
+                {
+                  "id": "7e0a6b67-605e-407a-8d53-f7a88e43895d",
+                  "required": true,
+                  "name": "userId",
+                  "type": "ID"
+                },
+                {
+                  "id": "b6bea60c-8dc9-4bd9-a950-d5f8aa2c6a60",
+                  "required": true,
+                  "name": "connectorId",
+                  "type": "STRING"
+                }
+              ]
+            },
+            {
+              "id": "3399ec69-7d59-4637-815f-46cfbf5ace52",
+              "name": "Edit User's Phone Number",
+              "description": "This action edits a user's work or home phone number in Google. If 'Replace existing phone number' is selected, then all phone numbers of the selected type (work or home) will be overwritten.",
+              "parameters": [
+                {
+                  "id": "f8b9996a-3bc7-42fe-82d6-8c8387edac7a",
+                  "required": true,
+                  "name": "userId",
+                  "type": "ID"
+                },
+                {
+                  "id": "162964c5-b46e-47ff-a2c5-91005f4b7d15",
+                  "required": false,
+                  "name": "userPhoneNumber.value",
+                  "type": "STRING"
+                },
+                {
+                  "id": "cf242b5d-f74d-4e12-8d62-dae82b938392",
+                  "required": false,
+                  "name": "userPhoneNumber.type",
+                  "type": "STRING"
+                },
+                {
+                  "id": "c81e921f-6962-4707-8519-fbb390abdde9",
+                  "required": false,
+                  "name": "userPhoneNumber.primary",
+                  "type": "BOOLEAN"
+                },
+                {
+                  "id": "ca26eac3-5724-4d36-9da7-d656cee84b6f",
+                  "required": false,
+                  "name": "override",
+                  "type": "BOOLEAN"
+                },
+                {
+                  "id": "b6bea60c-8dc9-4bd9-a950-d5f8aa2c6a60",
+                  "required": true,
+                  "name": "connectorId",
+                  "type": "STRING"
+                }
+              ]
+            }
+          ],
+          "last": false,
+          "totalPages": 21,
+          "totalElements": 206,
+          "first": true,
+          "numberOfElements": 10,
+          "size": 10,
+          "number": 0
+        }
+      },
+      "Content": {
+        "title": "Content",
+        "required": [
+          "id",
+          "parameters"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "aaa7d21e-02eb-4bb4-89dd-f855078bd99e"
+          },
+          "name": {
+            "type": "string",
+            "example": "Set User's Manager"
+          },
+          "description": {
+            "type": "string",
+            "example": "This action sets a user's manager in Salesforce."
+          },
+          "parameters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Parameter"
+            },
+            "description": ""
+          }
+        }
+      },
+      "Parameter": {
+        "title": "Parameter",
+        "required": [
+          "id",
+          "required",
+          "name",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "87fba1fa-226a-4f51-b82b-ab08216b1d01"
+          },
+          "required": {
+            "type": "boolean",
+            "example": true
+          },
+          "name": {
+            "type": "string",
+            "example": "userId"
+          },
+          "type": {
+            "type": "string",
+            "example": "ID"
+          }
+        },
+        "example": {
+          "id": "87fba1fa-226a-4f51-b82b-ab08216b1d01",
+          "required": true,
+          "name": "userId",
+          "type": "ID"
+        }
+      },
+      "ExecuteActionRequest": {
+        "title": "ExecuteActionRequest",
+        "required": [
+          "04d17606-6601-11e5-9d70-feff819cdc9f",
+          "fffd0740-660e-11e5-9d70-feff819cdc9f",
+          "b6bea60c-8dc9-4bd9-a950-d5f8aa2c6a60"
+        ],
+        "type": "object",
+        "properties": {
+          "04d17606-6601-11e5-9d70-feff819cdc9f": {
+            "type": "string"
+          },
+          "fffd0740-660e-11e5-9d70-feff819cdc9f": {
+            "type": "boolean"
+          },
+          "b6bea60c-8dc9-4bd9-a950-d5f8aa2c6a60": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "04d17606-6601-11e5-9d70-feff819cdc9f": "5a410328-34be-4fd1-b6c6-89a63a0219f2",
+          "fffd0740-660e-11e5-9d70-feff819cdc9f": true,
+          "b6bea60c-8dc9-4bd9-a950-d5f8aa2c6a60": "acbdd1754-e1a3-01e7-8d81-abc60a2f477b"
+        }
+      },
+      "ExecuteAction[DEPRECATED]Request": {
+        "title": "ExecuteAction[DEPRECATED]Request",
+        "required": [
+          "actionId",
+          "params"
+        ],
+        "type": "object",
+        "properties": {
+          "actionId": {
+            "type": "string"
+          },
+          "params": {
+            "$ref": "#/components/schemas/Params"
+          }
+        },
+        "example": {
+          "actionId": "6a9d3ed0-6600-11e5-9d70-feff819cdc9f",
+          "params": {
+            "input": {
+              "userId": {
+                "format": "DYN_FIELDS",
+                "templateKeys": [
+                  {
+                    "integrationId": "acbdd1754-e1a3-01e7-8d81-abc60a2f477b",
+                    "dynamicFieldIds": {
+                      "5a410328-34be-4fd1-b6c6-89a63a0219f2": "c969f803-5693-4fe6-baa8-2d9a1b5023b8"
+                    },
+                    "sourceContext": {
+                      "BCUser": [
+                        {
+                          "value": "f158a2d2-a77c-11e6-8aac-89b859b0594b",
+                          "displayValue": "John Smith"
+                        }
+                      ]
+                    },
+                    "valid": true
+                  }
+                ],
+                "value": "{{5a410328-34be-4fd1-b6c6-89a63a0219f2}}"
+              },
+              "password": {
+                "format": "LITERAL",
+                "value": "MyNewPassword"
+              },
+              "requirePasswordChange": {
+                "format": "LITERAL",
+                "value": true
+              },
+              "integrationId": {
+                "format": "LITERAL",
+                "value": "acbdd1754-e1a3-01e7-8d81-abc60a2f477b"
+              }
+            }
+          }
+        }
+      },
+      "Params": {
+        "title": "Params",
+        "required": [
+          "input"
+        ],
+        "type": "object",
+        "properties": {
+          "input": {
+            "$ref": "#/components/schemas/Input"
+          }
+        }
+      },
+      "Input": {
+        "title": "Input",
+        "required": [
+          "userId",
+          "password",
+          "requirePasswordChange",
+          "integrationId"
+        ],
+        "type": "object",
+        "properties": {
+          "userId": {
+            "$ref": "#/components/schemas/UserId"
+          },
+          "password": {
+            "$ref": "#/components/schemas/Password"
+          },
+          "requirePasswordChange": {
+            "$ref": "#/components/schemas/RequirePasswordChange"
+          },
+          "integrationId": {
+            "$ref": "#/components/schemas/IntegrationId"
+          }
+        }
+      },
+      "UserId": {
+        "title": "UserId",
+        "required": [
+          "format",
+          "templateKeys",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "format": {
+            "type": "string"
+          },
+          "templateKeys": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TemplateKey"
+            },
+            "description": ""
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "TemplateKey": {
+        "title": "TemplateKey",
+        "required": [
+          "integrationId",
+          "dynamicFieldIds",
+          "sourceContext",
+          "valid"
+        ],
+        "type": "object",
+        "properties": {
+          "integrationId": {
+            "type": "string",
+            "example": "acbdd1754-e1a3-01e7-8d81-abc60a2f477b"
+          },
+          "dynamicFieldIds": {
+            "$ref": "#/components/schemas/DynamicFieldIds"
+          },
+          "sourceContext": {
+            "$ref": "#/components/schemas/SourceContext"
+          },
+          "valid": {
+            "type": "boolean",
+            "example": true
+          }
+        }
+      },
+      "DynamicFieldIds": {
+        "title": "DynamicFieldIds",
+        "required": [
+          "5a410328-34be-4fd1-b6c6-89a63a0219f2"
+        ],
+        "type": "object",
+        "properties": {
+          "5a410328-34be-4fd1-b6c6-89a63a0219f2": {
+            "type": "string",
+            "example": "c969f803-5693-4fe6-baa8-2d9a1b5023b8"
+          }
+        },
+        "example": {
+          "5a410328-34be-4fd1-b6c6-89a63a0219f2": "c969f803-5693-4fe6-baa8-2d9a1b5023b8"
+        }
+      },
+      "SourceContext": {
+        "title": "SourceContext",
+        "required": [
+          "BCUser"
+        ],
+        "type": "object",
+        "properties": {
+          "BCUser": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BCUser"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "BCUser": [
+            {
+              "value": "f158a2d2-a77c-11e6-8aac-89b859b0594b",
+              "displayValue": "John Smith"
+            }
+          ]
+        }
+      },
+      "BCUser": {
+        "title": "BCUser",
+        "required": [
+          "value",
+          "displayValue"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "example": "f158a2d2-a77c-11e6-8aac-89b859b0594b"
+          },
+          "displayValue": {
+            "type": "string",
+            "example": "John Smith"
+          }
+        },
+        "example": {
+          "value": "f158a2d2-a77c-11e6-8aac-89b859b0594b",
+          "displayValue": "John Smith"
+        }
+      },
+      "Password": {
+        "title": "Password",
+        "required": [
+          "format",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "format": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "RequirePasswordChange": {
+        "title": "RequirePasswordChange",
+        "required": [
+          "format",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "format": {
+            "type": "string"
+          },
+          "value": {
+            "type": "boolean"
+          }
+        }
+      },
+      "IntegrationId": {
+        "title": "IntegrationId",
+        "required": [
+          "format",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "format": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "ListWorkflows": {
+        "title": "ListWorkflows",
+        "required": [
+          "content",
+          "number",
+          "size",
+          "totalElements",
+          "last",
+          "totalPages",
+          "first",
+          "numberOfElements"
+        ],
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Content1"
+            },
+            "description": ""
+          },
+          "number": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalElements": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "last": {
+            "type": "boolean"
+          },
+          "totalPages": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "first": {
+            "type": "boolean"
+          },
+          "numberOfElements": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "content": [
+            {
+              "workflowId": "09c65d3d-ff3a-4059-b9a7-dbc21c66a571",
+              "name": "Alert Remediation | Finance File Public Link"
+            },
+            {
+              "workflowId": "33910963-4ed2-4125-93ab-501ae7d16c87",
+              "name": "Offboarding | G Suite Only"
+            },
+            {
+              "workflowId": "0115ca0b-5999-4fa9-aad0-0913b7553dde",
+              "name": "Offboarding | Okta"
+            },
+            {
+              "workflowId": "015b1c0a-50b7-4ea6-96ca-04baf65f12e6",
+              "name": "Onboarding | G Suite Only"
+            },
+            {
+              "workflowId": "f633fee1-203c-42da-b3ee-261e5d7d3a49",
+              "name": "Onboarding | Multi-Saas w/ API"
+            },
+            {
+              "workflowId": "41d97d49-8da4-47eb-b40c-668b7d4b5bf8",
+              "name": "Platform API | Splunk Log Capture Workflow"
+            }
+          ],
+          "number": 0,
+          "size": 6,
+          "totalElements": 6,
+          "last": true,
+          "totalPages": 1,
+          "first": true,
+          "numberOfElements": 6
+        }
+      },
+      "Content1": {
+        "title": "Content1",
+        "required": [
+          "workflowId",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "workflowId": {
+            "type": "string",
+            "example": "09c65d3d-ff3a-4059-b9a7-dbc21c66a571"
+          },
+          "name": {
+            "type": "string",
+            "example": "Alert Remediation | Finance File Public Link"
+          }
+        }
+      },
+      "UserWorkflow": {
+        "title": "UserWorkflow",
+        "required": [
+          "integrationId",
+          "providerId",
+          "parameters"
+        ],
+        "type": "object",
+        "properties": {
+          "integrationId": {
+            "type": "string"
+          },
+          "providerId": {
+            "type": "string"
+          },
+          "parameters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Parameter1"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "integrationId": "acf671e1-85a7-11e6-85bb-b974cab0ac07",
+          "providerId": "7c7cb499-00ef-11e6-a8bb-09d7f4163a23",
+          "parameters": [
+            {
+              "key": "userId"
+            }
+          ]
+        }
+      },
+      "Parameter1": {
+        "title": "Parameter1",
+        "required": [
+          "key"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "example": "userId"
+          }
+        }
+      },
+      "WorkflowDoesNotExist": {
+        "title": "WorkflowDoesNotExist",
+        "required": [
+          "code",
+          "message",
+          "description",
+          "link",
+          "errorCorrelationId"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "link": {
+            "type": "string"
+          },
+          "errorCorrelationId": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "code": "58490",
+          "message": "Failed to retrieve event details for workflow 0115ca0b-5999-4fa9-aad0-0913b7553dde",
+          "description": "",
+          "link": "",
+          "errorCorrelationId": ""
+        }
+      },
+      "ExecuteWorkflowRequest": {
+        "title": "ExecuteWorkflowRequest",
+        "required": [
+          "userId"
+        ],
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "userId": "123456"
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Authentication",
+      "description": ""
+    },
+    {
+      "name": "Documentation",
+      "description": ""
+    },
+    {
+      "name": "Reporting - GraphQL",
+      "description": ""
+    },
+    {
+      "name": "Automation",
+      "description": ""
+    }
+  ]
+}
